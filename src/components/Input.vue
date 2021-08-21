@@ -1,5 +1,41 @@
 <template>
-  <div class="hello">
+  <div class="main_box">
+     <form action="" class="box_input" onsubmit="event.preventDefault() ">
+        <h1>
+            Employee
+        </h1>
+        <input type="text"  name=""  placeholder="Nume"    id="nume" v-model="nume" required>
+        <input type="text"  name=""  placeholder="Prenume" id="prenume" v-model="prenume" required>
+        <input type="email" name=""  placeholder="Email"   id="email" v-model="email" required>
+        <!--
+        <input type="date"  name=""  value=""    id="date" required>
+        <button  id="selectImg">Select image</button>
+        <img id="imgPreview" ><label id="upProgress"></label><br>
+        <img id="output" src="nullSource" hidden />
+        
+        <select class="sex" value=null name="sex" id="sex" required >
+            <option hidden disbaled value="">
+                Sex
+            </option>
+            <option value="des">
+                Des
+            </option>
+            <option value="rar">
+                Rar
+             </option>
+            <option value="foarterar">
+                Foarte rar
+            </option>
+            <option value="virgin">
+                Virgin
+            </option>
+        </select>
+-->
+        <input type="submit" id="addData" name="" value="Add" v-on:click="addUser()" >
+    
+    </form>
+
+    <!--
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
@@ -82,33 +118,38 @@
           >awesome-vue</a
         >
       </li>
-    </ul>
+    </ul>-->
   </div>
 </template>
 
 <script>
+/*
 export default {
-  name: "HelloWorld",
+  name: "Input",
   props: {
     msg: String,
   },
 };
+*/
+export default{
+  name:"Input",
+  data()
+  {
+    return{
+      nume:null,
+      prenume:null,
+      email:null
+    }
+  },
+  methods:{
+    addUser(){
+      console.warn("values:" ,this.nume, this.prenume, this.email);
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+@import "./styles/Input.css";
 </style>

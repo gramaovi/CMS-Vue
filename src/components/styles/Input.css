@@ -1,0 +1,144 @@
+.box_input{
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top:50%;
+    left:20%;
+    transform: translate(-50%,-50%);
+    background:rgba(7, 16, 24, 0.4);
+    border-radius: 25px;
+    text-align:center;
+    color:white;
+}
+
+.box_input h1
+{
+
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.box_input input[type="text"],
+.box_input input[type="email"],
+.box_input input[type="date"],
+.box_input input[type="file"],
+.sex
+
+{
+    border:0;
+    background: none;
+    display:block;
+    margin: 20px auto;
+    text-align:center;
+    border: 3px solid #07679b;
+    padding:14px 10px;
+    width: 220px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.25px;
+   
+}
+.functions input
+{
+    border:0;
+    background: none;
+ 
+    margin: 5px auto;
+    
+    border: 3px solid #07679b;
+    padding:14px 10px;
+    width: 220px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.25px;
+}
+.functions select
+{
+    border:0;
+    background: none;
+    display:inline;
+    margin: 5px auto;
+    
+    border: 3px solid #07679b;
+    padding:14px 10px;
+    width: 220px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.25px;
+}
+#imgPreview
+{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border:1px solid #A26BCC;
+}
+.sex
+{
+    border:0;
+    background: none;
+    display:block;
+    margin: 20px auto;
+    text-align:center;
+    border: 3px solid #07679b;
+    padding:14px 10px;
+    width: 220px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.25px;
+}
+
+.sex option,
+.functions option
+ {
+    color:black;
+    background:#07679b;
+    border-radius: 30%;
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+} 
+
+.box_input input[type="text"]:focus,
+.box_input input[type="email"]:focus,
+.box_input input[type="date"]:focus,
+.box_input input[type="file"]:focus,
+.sex:focus,
+.functions input:focus,
+.functions select:focus
+{
+    width: 270px;
+    border-color:#ffc400ec;
+    
+}
+
+.box_input input[type="submit"],
+.box_input input[type="input"],
+.box_input button
+{
+    border:0;
+    background:#07679b;
+    display:block;
+    margin: 20px auto;
+    text-align:center;
+    border: 3px solid ffc400ec;
+    padding:14px 35px;
+
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+
+.box_input input[type="submit"]:hover,
+.box_input button:hover
+{
+    background: #A26BCC;
+}
+
+::placeholder{
+    color: white;
+}
