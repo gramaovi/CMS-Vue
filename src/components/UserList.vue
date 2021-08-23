@@ -7,15 +7,17 @@
           <th scope="col">Prenume</th>
           <th scope="col">Email</th>
           <th scope="col">Sex</th>
+          <th scope="col">Data nasterii</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="{ id, nume, prenume, email, sex } in users" :key="id">
+        <tr v-for="{ id, nume, prenume, email, sex , bday} in users" :key="id">
           <td>{{ nume }}</td>
           <td>{{ prenume }}</td>
           <td>{{ email }}</td>
           <td>{{ sex }}</td>
+          <td>{{ bday }}</td>
           <td>
             <router-link :to="`/edit/${id}`">
               <button class="btn btn-primary btn-sm me-2">
