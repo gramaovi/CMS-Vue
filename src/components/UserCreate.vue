@@ -27,16 +27,7 @@
         required
         />
       </div>
-<div id="app">
-  <div v-if="!image">
-    <h2>Select an image</h2>
-    <input type="file" @change="onFileChange">
-  </div>
-  <div v-else>
-    <img :src="image" />
-    <button @click="removeImage">Remove image</button>
-  </div>
-</div>
+
       <div class="form-group mt-3">
         <label>Email</label>
         <input
@@ -46,7 +37,19 @@
           required
         />
       </div>
+       <div class="form-group">
+        <label>Poza </label>
+        <input 
+        class="form-control"
+        type="file"
+        @change="onFileSelected"/>
+      </div>
+      <div>
+        <div class="form-group">
+        <img id="imgPreview"/>
 
+        </div>
+      </div>
       <button type="submit" class="btn btn-success mt-3">
         Create User
       </button>
@@ -69,29 +72,23 @@ export default {
       form.email = ''
       form.sex =''
       form.bday='';
+      
     }
 
     return { form, onSubmit }
   },
   methods: {
-    onFileChange(e) {
-      var files = e.target.files || e.dataTransfer.files;
-      if (!files.length)
-        return;
-      this.createImage(files[0]);
-    },
-    createImage(file) {
-       
-      var reader = new FileReader();
-      
-      reader.onload = (e) => {
-        this.image = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    },
-    removeImage: function () {
-      this.image = '';
-    }
+   onFileSelected(event){
+     var files=[];
+     //this.selectedFile=event.target.files[0];
+     files=event.target.files;
+     var reader=new FileReader();
+     reader.onload=function(){
+document.getElementById("imgPreview").src=reader.result;
+     }
+     reader.readAsDataURL(files[0]);
+     console.log(files[0]);
+   }
   }
 }
 
