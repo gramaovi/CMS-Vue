@@ -3,15 +3,19 @@
     <table class="table m-0">
       <thead>
         <tr>
-          <th scope="col">Name</th>
+          <th scope="col">Nume</th>
+          <th scope="col">Prenume</th>
           <th scope="col">Email</th>
+          <th scope="col">Sex</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="{ id, name, email } in users" :key="id">
-          <td>{{ name }}</td>
+        <tr v-for="{ id, nume, prenume, email, sex } in users" :key="id">
+          <td>{{ nume }}</td>
+          <td>{{ prenume }}</td>
           <td>{{ email }}</td>
+          <td>{{ sex }}</td>
           <td>
             <router-link :to="`/edit/${id}`">
               <button class="btn btn-primary btn-sm me-2">
