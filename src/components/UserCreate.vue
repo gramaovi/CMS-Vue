@@ -81,7 +81,7 @@ export default {
       this.createImage(files[0]);
     },
     createImage(file) {
-     
+      
       var reader = new FileReader();
       
       reader.onload = (e) => {
