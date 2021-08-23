@@ -40,6 +40,7 @@
        <div class="form-group">
         <label>Poza </label>
         <input 
+       
         class="form-control"
         type="file"
         @change="onFileSelected"/>
@@ -60,34 +61,36 @@
 <script>
 import { createUser } from '@/firebase'
 import { reactive } from 'vue'
-
+let url;
 export default {
   setup() {
-    const form = reactive({ nume: '',prenume:'', email: '', sex: '', bday:''})
+    const form = reactive({ nume: '', prenume:'', email: '', sex: '', bday:''})
     const onSubmit = async () => {
-      await createUser({ form })
+      await createUser({  ...form })
       form.nume = ''
       form.prenume=''
       form.email = ''
       form.sex =''
       form.bday='';
-
-      
+      document.getElementById("imgPreview").src="";      
+     
     }
 
     return { form, onSubmit }
   },
   methods: {
-   onFileSelected(event){
+     onFileSelected(event){
      var files=[];
      //this.selectedFile=event.target.files[0];
      files=event.target.files;
      var reader=new FileReader();
-     reader.onload=function(){
-     document.getElementById("imgPreview").src=reader.result;
+      reader.onload= function(){
+      document.getElementById("imgPreview").src=reader.result;
+      
+      url=reader.result;
      }
      reader.readAsDataURL(files[0]);
-     console.log(files[0]);
+    
    }
   }
 }

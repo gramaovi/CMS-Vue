@@ -31,8 +31,8 @@ export const updateUser = (id, user) => {
 export const deleteUser = id => {
   return usersCollection.doc(id).delete()
 }
-export const addPicture = (id,picture) => {
-  return firebase.firestore.ref("ProfilePicture"/+id).put(picture);
+export const addPicture = (user_picture) => {
+  return db.collection("pictures").add(user_picture);
 }
 export const useLoadUsers = () => {
   const users = ref([])

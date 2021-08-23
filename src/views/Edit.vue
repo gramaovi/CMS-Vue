@@ -86,22 +86,27 @@ export default {
       router.push('/')
       form.name = ''
       form.email = ''
+      form.prenume=''
+      form.email=''
+      form.sex=''
+      form.bday=''
+      document.getElementById("imgPreview").src="";
     }
 
     return { form, update }
   },
     methods: {
-   onFileSelected(event){
-     var files=[];
-     //this.selectedFile=event.target.files[0];
-     files=event.target.files;
-     var reader=new FileReader();
-     reader.onload=function(){
-     document.getElementById("imgPreview").src=reader.result;
-     }
-     reader.readAsDataURL(files[0]);
-     console.log(files[0]);
-   }
-  }
+      onFileSelected(event){
+        var files=[];
+        //this.selectedFile=event.target.files[0];
+        files=event.target.files;
+        var reader=new FileReader();
+        reader.onload=function(){
+        document.getElementById("imgPreview").src=reader.result;
+        }
+        reader.readAsDataURL(files[0]);
+        console.log(files[0]);
+      }
+      }
 }
 </script>
