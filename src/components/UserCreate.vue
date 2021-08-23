@@ -64,14 +64,14 @@ import { reactive } from 'vue'
 export default {
   setup() {
     const form = reactive({ nume: '',prenume:'', email: '', sex: '', bday:''})
-  
     const onSubmit = async () => {
-      await createUser({ ...form })
+      await createUser({ form })
       form.nume = ''
       form.prenume=''
       form.email = ''
       form.sex =''
       form.bday='';
+
       
     }
 
@@ -84,7 +84,7 @@ export default {
      files=event.target.files;
      var reader=new FileReader();
      reader.onload=function(){
-document.getElementById("imgPreview").src=reader.result;
+     document.getElementById("imgPreview").src=reader.result;
      }
      reader.readAsDataURL(files[0]);
      console.log(files[0]);

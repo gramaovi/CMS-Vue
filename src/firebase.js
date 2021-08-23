@@ -31,7 +31,9 @@ export const updateUser = (id, user) => {
 export const deleteUser = id => {
   return usersCollection.doc(id).delete()
 }
-
+export const addPicture = (id,picture) => {
+  return firebase.firestore.ref("ProfilePicture"/+id).put(picture);
+}
 export const useLoadUsers = () => {
   const users = ref([])
   const close = usersCollection.onSnapshot(snapshot => {
